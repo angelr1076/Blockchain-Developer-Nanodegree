@@ -1,0 +1,14 @@
+Encode and Decode Text from Terminal
+  String to hex: xxd -p <<< "Blockchain Developer"
+  Hex to string: echo 426c6f636b636861696e20446576656c6f7065720a|xxd -r -p
+
+Encode and Decode Text from Terminal Using Files
+  Create file: touch hello.txt
+  Add text to file
+  String to Hex: xxd -p hello.txt helloEncoded.txt
+  Hex to String: xxd -p -r helloEncoded.txt helloDecoded.txt
+
+Encode and Decode Image from Terminal Using Files
+  Find image file and place in directory
+  Image to Hex: xxd -p cat.png cat.txt
+  Hex to Image: xxd -p -r cat.txt catDecoded.png
