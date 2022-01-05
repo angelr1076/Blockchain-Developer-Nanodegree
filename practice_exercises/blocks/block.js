@@ -21,7 +21,7 @@ class Block {
      * Create a Promise that resolve with `self` after you create
      * the hash of the object and assigned to the hash property `self.hash = ...`
      */
-    //
+
     generateHash() {
         // Use this to create a temporary reference of the class object
         let self = this;

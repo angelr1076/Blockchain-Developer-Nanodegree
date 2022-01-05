@@ -1,0 +1,9 @@
+// Block data model
+{
+   "hash": "",
+   "strippedsize": 35904,
+   "height": 0,
+   "body": [],
+   "time": 0,
+   "previousblockhash": ""
+ }
