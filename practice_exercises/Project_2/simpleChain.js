@@ -21,15 +21,21 @@ class Block {
         let self = this;
         return new Promise((resolve, reject) => {
             // Save in auxiliary variable the current block hash
-            const currentHash = self.hash;
+            let currentHash = {...self, hash: null };
+
             console.log('Current hash: ', currentHash);
             // Recalculate the hash of the Block
-            const recalculatedHash = SHA256(JSON.stringify(self)).toString();
+            const recalculatedHash = SHA256(JSON.stringify(currentHash)).toString();
             console.log('Recalc hash: ', recalculatedHash);
             // Comparing if the hashes changed
-            currentHash === recalculatedHash ?
+            self.hash === recalculatedHash ?
                 resolve(true) :
-                resolve(false, Error('The current block has been tampered with.'));
+                resolve(
+                    false,
+                    Error(
+                        `The current block has been tampered with ${currentHash} !== ${recalculatedHash}`
+                    )
+                );
         });
     }
 }
