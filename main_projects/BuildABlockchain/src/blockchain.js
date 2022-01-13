@@ -96,7 +96,7 @@ class Blockchain {
      */
 
     /**
-     * Utility method that return a new date/time stamp
+     * Private utility method that returns a new date/time stamp
      */
     _getCurrentTimeStamp() {
         return new Date().getTime().toString().slice(0, -3);
