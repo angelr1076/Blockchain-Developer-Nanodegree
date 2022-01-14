@@ -136,20 +136,18 @@ class Blockchain {
 
             try {
                 // Check if the time elapsed is less than 5 minutes
-                if (currentTime - messageTime > 300) {
-                    reject(Error, 'The five minute window has elapsed');
-                }
+                if (currentTime - messageTime < 300) {
+                    if (!bitcoinMessage(message, address, signature)) {
+                        return reject(Error, 'Cannot verify bitcoin message');
+                    }
 
-                if (!bitcoinMessage(message, address, signature)) {
-                    reject(Error, 'Cannot verify message');
+                    // Verify the message with wallet address and signature if bitcoinMessage is true
+                    let newBlock = new BlockClass.Block({ star, address });
+                    // Create the block and add it to the chain
+                    let blockAdd = await self._addBlock(newBlock);
+                    // Resolve with the block added.
+                    resolve(blockAdd);
                 }
-
-                // Verify the message with wallet address and signature if bitcoinMessage is true
-                let newBlock = new BlockClass.Block({ star: star, owner: address });
-                // Create the block and add it to the chain
-                let blockAdd = await self._addBlock(newBlock);
-                // Resolve with the block added.
-                resolve(blockAdd);
             } catch (error) {
                 reject(Error, 'Something went wrong trying to add your star');
             }
