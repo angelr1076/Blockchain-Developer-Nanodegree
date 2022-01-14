@@ -82,7 +82,7 @@ class Blockchain {
                 this.height++;
                 resolve(block);
             } catch (error) {
-                reject(Error, 'An error occured creating a new block');
+                return reject(new Error(), 'An error occured creating a new block');
             }
         });
     }
@@ -129,27 +129,37 @@ class Blockchain {
     submitStar(address, message, signature, star) {
         let self = this;
         return new Promise(async(resolve, reject) => {
-            // Get the time from the message sent as a parameter
-            let messageTime = parseInt(message.split(':')[1]);
-            // Get the current time
-            let currentTime = parseInt(new Date().getTime().toString().slice(0, -3));
-
             try {
+                // Get the time from the message sent as a parameter
+                let messageTime = parseInt(message.split(':')[1]);
+                // Get the current time
+
+                let currentTime = parseInt(
+                    new Date().getTime().toString().slice(0, -3)
+                );
+
                 // Check if the time elapsed is less than 5 minutes
                 if (currentTime - messageTime < 300) {
                     if (!bitcoinMessage(message, address, signature)) {
-                        return reject(Error, 'Cannot verify bitcoin message');
+                        return reject(new Error(), 'Cannot verify bitcoin message');
                     }
 
                     // Verify the message with wallet address and signature if bitcoinMessage is true
-                    let newBlock = new BlockClass.Block({ star, address });
+                    let newBlock = new BlockClass.Block({
+                        star: star,
+                        address: address,
+                    });
+
                     // Create the block and add it to the chain
                     let blockAdd = await self._addBlock(newBlock);
                     // Resolve with the block added.
                     resolve(blockAdd);
                 }
             } catch (error) {
-                reject(Error, 'Something went wrong trying to add your star');
+                return reject(
+                    new Error(),
+                    'Something went wrong trying to add your star'
+                );
             }
         });
     }
