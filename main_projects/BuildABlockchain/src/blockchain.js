@@ -11,6 +11,7 @@
 const SHA256 = require('crypto-js/sha256');
 const BlockClass = require('./block.js');
 const bitcoinMessage = require('bitcoinjs-message');
+const { sign } = require('tiny-secp256k1');
 
 class Blockchain {
     /**
@@ -127,7 +128,32 @@ class Blockchain {
      */
     submitStar(address, message, signature, star) {
         let self = this;
-        return new Promise(async(resolve, reject) => {});
+        return new Promise(async(resolve, reject) => {
+            // Get the time from the message sent as a parameter
+            let messageTime = parseInt(message.split(':')[1]);
+            // Get the current time
+            let currentTime = parseInt(new Date().getTime().toString().slice(0, -3));
+
+            try {
+                // Check if the time elapsed is less than 5 minutes
+                if (currentTime - messageTime > 300) {
+                    reject(Error, 'The five minute window has elapsed');
+                }
+
+                if (!bitcoinMessage(message, address, signature)) {
+                    reject(Error, 'Cannot verify message');
+                }
+
+                // Verify the message with wallet address and signature if bitcoinMessage is true
+                let newBlock = new BlockClass.Block({ star: star, owner: address });
+                // Create the block and add it to the chain
+                let blockAdd = await self._addBlock(newBlock);
+                // Resolve with the block added.
+                resolve(blockAdd);
+            } catch (error) {
+                reject(Error, 'Something went wrong trying to add your star');
+            }
+        });
     }
 
     /**
