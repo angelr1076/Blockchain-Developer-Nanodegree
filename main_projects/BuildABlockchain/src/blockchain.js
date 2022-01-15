@@ -146,8 +146,8 @@ class Blockchain {
 
           // Verify the message with wallet address and signature if bitcoinMessage is true
           let newBlock = new BlockClass.Block({
-            star: star,
-            address: address,
+            star,
+            address,
           });
 
           // Create the block and add it to the chain
