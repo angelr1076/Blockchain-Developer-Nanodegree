@@ -61,16 +61,14 @@ class Block {
   getBData() {
     // Getting the encoded data saved in the Block
     let self = this;
-    // Decoding the data to retrieve the JSON representation of the object
-    const decodedData = hex2ascii(self.body);
-    // Parse the data to an object to be retrieve.
-    const block = JSON.parse(decodedData);
     // Resolve with the data and make sure that you don't need to return the data for the `genesis block`
     return new Promise((resolve, reject) => {
+      // Decoding the data to retrieve the JSON representation of the object
+      const decodedData = hex2ascii(self.body);
+      // Parse the data to an object to be retrieve.
+      const blockData = JSON.parse(decodedData);
       // From initializeChain() method in blockchain.js
-      block.data === 'Genesis Block'
-        ? reject(Error, 'Genesis Block')
-        : resolve(block);
+      self.height > 0 ? resolve(blockData) : reject(new Error('Genesis Block'));
     });
   }
 }

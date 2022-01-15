@@ -206,17 +206,12 @@ class Blockchain {
     let self = this;
     let stars = [];
     return new Promise(async (resolve, reject) => {
+      // Derived from mentor answer: https://knowledge.udacity.com/questions/282668
       self.chain.forEach(async star => {
         let data = await star.getBData();
-        try {
-          data.owner === address
-            ? stars.push(data)
-            : reject(new Error('Error retrieving stars'));
-          resolve(stars);
-        } catch (error) {
-          resolve(false);
-        }
+        if (data.owner === address) stars.push(data);
       });
+      resolve(stars);
     });
   }
 
