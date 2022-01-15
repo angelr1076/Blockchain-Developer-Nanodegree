@@ -132,29 +132,33 @@ class Blockchain {
       try {
         // Get the time from the message sent as a parameter
         let messageTime = parseInt(message.split(':')[1]);
-        // Get the current time
-
         let currentTime = parseInt(
           new Date().getTime().toString().slice(0, -3),
         );
 
-        // Check if the time elapsed is less than 5 minutes
-        if (currentTime - messageTime < 300) {
-          if (!bitcoinMessage(message, address, signature)) {
-            return reject(Error, 'Cannot verify bitcoin message');
-          }
-
-          // Verify the message with wallet address and signature if bitcoinMessage is true
-          let newBlock = new BlockClass.Block({
-            star,
-            address,
-          });
-
-          // Create the block and add it to the chain
-          let blockAdd = await self._addBlock(newBlock);
-          // Resolve with the block added.
-          resolve(blockAdd);
+        // Check if the time elapsed is more than 5 minutes, reject
+        if (currentTime - messageTime >= 300) {
+          reject(
+            new Error(
+              'More than 5 minutes has passed since the wallet was verified',
+            ),
+          );
         }
+
+        if (!bitcoinMessage.verify(message, address, signature)) {
+          return reject(new Error('Cannot verify bitcoin message'));
+        }
+
+        // Verify the message with wallet address and signature if bitcoinMessage is true
+        let newBlock = new BlockClass.Block({
+          address,
+          star,
+        });
+
+        // Create the block and add it to the chain
+        await self._addBlock(newBlock);
+        // Resolve with the block added.
+        resolve(newBlock);
       } catch (error) {
         return reject(Error, 'Something went wrong trying to add your star');
       }
@@ -169,7 +173,10 @@ class Blockchain {
    */
   getBlockByHash(hash) {
     let self = this;
-    return new Promise((resolve, reject) => {});
+    return new Promise((resolve, reject) => {
+      let block = self.chain.find(p => p.hash == hash);
+      block ? resolve(block) : reject(new Error('Issue finding block by hash'));
+    });
   }
 
   /**
@@ -198,7 +205,19 @@ class Blockchain {
   getStarsByWalletAddress(address) {
     let self = this;
     let stars = [];
-    return new Promise((resolve, reject) => {});
+    return new Promise(async (resolve, reject) => {
+      self.chain.forEach(async star => {
+        let data = await star.getBData();
+        try {
+          data.owner === address
+            ? stars.push(data)
+            : reject(new Error('Error retrieving stars'));
+          resolve(stars);
+        } catch (error) {
+          resolve(false);
+        }
+      });
+    });
   }
 
   /**
