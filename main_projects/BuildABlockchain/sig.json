@@ -1,8 +1,7 @@
 {
     "address": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN",
-    "signature": "HIfmczTaAcrY9EHDP1BW56RkTGhJEPziqylKu2WUmNq2GryB3xlKKq4m8Acu/LiAE9I5uG0Qw+4ChzKL+1UyBGE=",
-    "message": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN:1642193765:starRegistry",
-
+    "signature": "G42/FHTON109XxkEkAvscW4DhX978GNxd5wi9L5bmlA4CjEs3HGpyHjzKcdqi3mT1zc8KZeBytPXtFv/gU56yBk=",
+    "message": "tb1qpk7zl488tkg0rcn3f7k508lv0nzqmq30wjgtgt:1642262503:starRegistry",
     "star": {
         "dec": "68° 52' 56.9",
         "ra": "16h 29m 1.0s",
