@@ -1,7 +1,7 @@
 {
     "address": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN",
-    "signature": "G5SjHpuAnzdB79I51lQ7X5N0Iv42C4/YIQrKPCSWjbHLTu2EFl7vGyimvGJ5XBhYgfP/hG3HiX9uicYE/YJHaCE=",
-    "message": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN:1642348863:starRegistry",
+    "signature": "HPEMwJrgrvUJgYsRLRjnMmyF8cVvtL9emm4sI2GM979VxFar/1b7oRknPYKCANOWWNYoJX/atw8fBOJOoiTFVMw=",
+    "message": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN:1642363613:starRegistry",
     "star": [{
         "dec": "68° 52' 56.9",
         "ra": "20h 29m 1.0s",
@@ -18,3 +18,4 @@
         "story": "Testing the story 3"
     }]
 }
+

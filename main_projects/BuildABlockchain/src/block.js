@@ -40,10 +40,8 @@ class Block {
     return new Promise((resolve, reject) => {
       // Save in auxiliary variable the current block hash
       let currentHash = { ...self, hash: null };
-      // console.log('Current hash: ', currentHash);
       // Recalculate the hash of the Block
       const recalculatedHash = SHA256(JSON.stringify(currentHash)).toString();
-      // console.log('Recalc hash: ', recalculatedHash);
       // Comparing if the hashes changed
       self.hash != recalculatedHash ? reject(false) : resolve(true);
     });
@@ -68,13 +66,7 @@ class Block {
       // Parse the data to an object to be retrieve.
       const blockData = JSON.parse(decodedData);
       // From initializeChain() method in blockchain.js
-      try {
-        if (self.height > 0) {
-          resolve(blockData);
-        }
-      } catch (e) {
-        reject(new Error('Genesis Block'));
-      }
+      self.height > 0 ? resolve(blockData) : resolve('Genesis Block');
     });
   }
 }

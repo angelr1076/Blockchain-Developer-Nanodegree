@@ -77,12 +77,15 @@ class Blockchain {
 
         // create the `block hash` and push the block into the chain array
         block.hash = SHA256(JSON.stringify(block)).toString();
-        self.chain.push(block);
-        // update the `this.height`
-        this.height++;
-        resolve(block);
+        // Execute the validateChain() function every time a block is added
+        if (await self.validateChain()) {
+          self.chain.push(block);
+          // update the `this.height`
+          this.height++;
+          resolve(block);
+        }
       } catch (error) {
-        return reject(Error, 'An error occured creating a new block');
+        return reject('An error occured creating a new block');
       }
     });
   }
@@ -157,8 +160,6 @@ class Blockchain {
 
         // Create the block and add it to the chain
         await self._addBlock(newBlock);
-        // Execute the validateChain() function every time a block is added
-        await self.validateChain();
         // Resolve with the block added.
         resolve(newBlock);
       } catch (error) {
@@ -200,7 +201,7 @@ class Blockchain {
 
   /**
    * This method will return a Promise that will resolve with an array of Stars objects existing in the chain
-   * and are belongs to the owner with the wallet address passed as parameter.
+   * and belongs to the owner with the wallet address passed as parameter.
    * Remember the star should be returned decoded.
    * @param {*} address
    */
@@ -212,8 +213,10 @@ class Blockchain {
       self.chain.forEach(async star => {
         try {
           let data = await star.getBData();
-          if (data.address === address) stars.push(data);
-          resolve(stars);
+          if (data.address === address) {
+            stars.push(data);
+            resolve(stars);
+          }
         } catch (e) {
           console.log(e);
         }
@@ -224,27 +227,24 @@ class Blockchain {
   /**
    * This method will return a Promise that will resolve with the list of errors when validating the chain.
    * Steps to validate:
-   * 1. You should validate each block using `validateBlock`
+   * 1. You should validate each block using `validateBlock` (validate in block.js?)
    * 2. Each Block should check the with the previousBlockHash
    */
   validateChain() {
     let self = this;
     let errorLog = [];
     return new Promise(async (resolve, reject) => {
-      try {
-        //Validate each block using `validateBlock`
-        self.chain.map(async block => {
-          if (await block.validate()) {
-            //Each Block should check the previousBlockHash
-            if (block.previousBlockHash !== block.hash) {
-              // Push errors into the block
-              errorLog.push(block);
-            }
-          }
-        });
-      } catch (e) {
-        reject(e);
-      }
+      //Validate each block using `validateBlock`
+      self.chain.forEach(async block => {
+        if (!(await block.validate())) {
+          errorLog.push({ error: 'Validation failed' });
+        }
+        if ((await block.hash) !== block.previousBlockHash) {
+          errorLog.push({ error: 'Previous block hash does not match' });
+        }
+      });
+      console.log('Chain validated');
+      resolve(errorLog);
     });
   }
 }

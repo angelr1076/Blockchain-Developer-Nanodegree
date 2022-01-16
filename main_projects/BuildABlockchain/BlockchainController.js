@@ -133,11 +133,9 @@ class BlockchainController {
         //Call the validateChain function in Blockchain Class
         let validation = await this.blockchain.validateChain();
         if (validation) {
-          return res.status(200).json(validation);
+          return res.status(200).json('Chain validated');
         } else {
-          return res
-            .status(400)
-            .send('There was an error validating the block');
+          return res.status(400).send('The blockchain is not valid');
         }
       } catch (e) {
         return res.status(500).send('Unknown error, try again');
