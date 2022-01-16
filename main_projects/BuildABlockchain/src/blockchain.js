@@ -157,6 +157,8 @@ class Blockchain {
 
         // Create the block and add it to the chain
         await self._addBlock(newBlock);
+        // Execute the validateChain() function every time a block is added
+        await self.validateChain();
         // Resolve with the block added.
         resolve(newBlock);
       } catch (error) {
@@ -228,7 +230,22 @@ class Blockchain {
   validateChain() {
     let self = this;
     let errorLog = [];
-    return new Promise(async (resolve, reject) => {});
+    return new Promise(async (resolve, reject) => {
+      try {
+        //Validate each block using `validateBlock`
+        self.chain.map(async block => {
+          if (await block.validate()) {
+            //Each Block should check the previousBlockHash
+            if (block.previousBlockHash !== block.hash) {
+              // Push errors into the block
+              errorLog.push(block);
+            }
+          }
+        });
+      } catch (e) {
+        reject(e);
+      }
+    });
   }
 }
 
