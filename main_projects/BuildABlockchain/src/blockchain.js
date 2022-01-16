@@ -243,7 +243,6 @@ class Blockchain {
           errorLog.push({ error: 'Previous block hash does not match' });
         }
       });
-      console.log('Chain validated');
       resolve(errorLog);
     });
   }
