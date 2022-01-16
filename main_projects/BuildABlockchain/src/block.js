@@ -68,7 +68,13 @@ class Block {
       // Parse the data to an object to be retrieve.
       const blockData = JSON.parse(decodedData);
       // From initializeChain() method in blockchain.js
-      self.height > 0 ? resolve(blockData) : reject(new Error('Genesis Block'));
+      try {
+        if (self.height > 0) {
+          resolve(blockData);
+        }
+      } catch (e) {
+        reject(new Error('Genesis Block'));
+      }
     });
   }
 }

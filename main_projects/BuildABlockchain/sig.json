@@ -1,20 +1,20 @@
 {
     "address": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN",
-    "signature": "HPI+kRUMpZu7EFWySz90Yq4GBdPcxsUgtiffsAnMBYm0X2ORing/DH0tvMthL29nhBc+5cAssYSRCshI5azdZ3E=",
-    "message": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN:1642287898:starRegistry",
+    "signature": "G2AAlA48ylYoxw3QThWmw+SOTCoxBS1V7N1yEeE6mDhId+IyCi2ZV89L8fE43N6GS79Olp2JJsXh7K25GGrb8Nw=",
+    "message": "1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN:1642344812:starRegistry",
     "star": [{
         "dec": "68° 52' 56.9",
-        "ra": "17h 29m 1.0s",
+        "ra": "20h 29m 1.0s",
         "story": "Testing the story 1"
     }, 
     {
         "dec": "69° 52' 56.9",
-        "ra": "18h 29m 1.0s",
+        "ra": "21h 29m 1.0s",
         "story": "Testing the story 2"
     },
     {
         "dec": "70° 52' 56.9",
-        "ra": "19h 29m 1.0s",
+        "ra": "22h 29m 1.0s",
         "story": "Testing the story 3"
     }]
 }
