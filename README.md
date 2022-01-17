@@ -8,7 +8,7 @@ Learn the fundamentals of the blockchain platform. Create your own private block
 
 ## Ethereum Smart Contracts, Tokens and Dapps
 
-- [ ] ### Advance your blockchain skillset to the second generation of blockchain services with smart contracts utilizing the Ethereum network.
+- [ ] Advance your blockchain skillset to the second generation of blockchain services with smart contracts utilizing the Ethereum network.
 - Understand what Ethereum is, why it's important, and how it's different from other Blockchain platforms.
 - Connect to the Ethereum tools and community available to you as an Ethereum blockchain developer.
 - Create a simple decentralized application that connects to the Ethereum blockchain.
