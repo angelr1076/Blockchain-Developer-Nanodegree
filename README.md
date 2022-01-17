@@ -8,16 +8,16 @@ Learn the fundamentals of the blockchain platform. Create your own private block
 
 ## Ethereum Smart Contracts, Tokens and Dapps
 
-- [] Advance your blockchain skillset to the second generation of blockchain services with smart contracts utilizing the Ethereum network.
+- [ ] Advance your blockchain skillset to the second generation of blockchain services with smart contracts utilizing the Ethereum network.
 
 ## Blockchain Architecture
 
-- [] Learn blockchain architecture and advanced concepts such as privacy, security and decentralized file management.
+- [ ] Learn blockchain architecture and advanced concepts such as privacy, security and decentralized file management.
 
 ## Dapp with autonomous smart contracts and oracles
 
-- [] Advance your blockchain skill set by developing a decentralized application (Dapp) that will perform actions based on external triggers, and handle payments.
+- [ ] Advance your blockchain skill set by developing a decentralized application (Dapp) that will perform actions based on external triggers, and handle payments.
 
 ## Capstone
 
-- [] For your capstone project, you’ll use all the new skills you’ve acquired to build decentralized property listing application.
+- [ ] For your capstone project, you’ll use all the new skills you’ve acquired to build decentralized property listing application.
