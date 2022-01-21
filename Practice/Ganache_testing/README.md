@@ -1,4 +1,5 @@
-# Commands in node
+# Ganache commands in node
+- See index.js
 
 ## Open the ganache cli
 - ganache-cli
@@ -19,3 +20,6 @@
 ## Run the endpoint
 - let web3 = new Web3(url);
 - calling the web3 variable will list all of the methods available 
+
+# Create Transactions
+- See app.js 
