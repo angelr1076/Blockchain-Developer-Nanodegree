@@ -4,19 +4,19 @@ let EthTransact = require('ethereumjs-tx').Transaction; // Create, manipulate an
 let web3 = new Web3('http://127.0.0.1:8545');
 
 // -- Step 2: Set the sending and receiving addresses for the transaction.
-let sendAddress = '0x8dFaede1a18adb2D2c06f6EbC2BDFc22295aDaef';
-let recAddress = '0x70F8BdFB0A23C09D27b6870a883A8540F2aF297E';
+let sendAddress = '0x28Fb76cd5CD3aDF0DeDF12F9bbFf0A2327EF4aDc';
+let recAddress = '0x628613a62120a0A76F50bc6E97eee13ce952ABDf';
 
 // -- Step 3: Check the balances of each address
 
 // -- Step 4: Set up the transaction using the transaction variables as shown
 let rawTransaction = {
-    nonce: 2,
-    to: recAddress,
-    gasPrice: 20000000,
-    gasLimit: 30000,
-    value: 30000,
-    data: '0x',
+  nonce: 1,
+  to: recAddress,
+  gasPrice: 20000000,
+  gasLimit: 30000,
+  value: 30000,
+  data: '0x',
 };
 
 // -- Step 5: View the raw transaction rawTransaction
@@ -28,7 +28,7 @@ let rawTransaction = {
 // Note: They haven't changed because they need to be signed...
 // -- Step 7: Sign the transaction with the Hex value of the private key of the sender
 let privateKeySender =
-    '3a0737fdf15c46688af413102aa21f88efd4efbc1b6973b7153975c7ae49fdc5';
+  'e0b349a01a475f5330055f2bf1977f9e1f5525339e480ec0455d523ca7a3a0e0';
 let privateKeySenderHex = Buffer.from(privateKeySender, 'hex');
 console.log('Buffer: ', privateKeySender);
 let transaction = new EthTransact(rawTransaction);
