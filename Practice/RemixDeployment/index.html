@@ -33,7 +33,7 @@
     // Uncaught TypeError: web3.eth.contract is not a constructor
 
     // Get the contract address
-    var RemixContract = new web3.eth.contract([
+    var RemixContract = new web3.eth.Contract([
         {
           "constant": false,
           "inputs": [
@@ -67,7 +67,7 @@
     console.log(RemixContract);
 
     // Get the contract abi
-    var myMessage = RemixContract.at('0xd9145CCE52D386f254917e481eB44e9943F39138');
+    var myMessage = RemixContract.at('0x69F033DD3ED1d187ff67Fb24B7498570ae0A5Fd9');
 
     console.log(myMessage);
 
