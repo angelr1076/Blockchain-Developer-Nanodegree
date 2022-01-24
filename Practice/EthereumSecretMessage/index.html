@@ -26,7 +26,7 @@
     if (typeof web3 !== 'undefined') {
       web3 = new Web3(web3.currentProvider);
     } else {
-      web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/de0786ec5b414595ae3254071d18451c"));
+      web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
     }
     // Set a default account
     web3.eth.defaultAccount = web3.eth.accounts[0];
@@ -62,7 +62,7 @@
       }
     ]
     // Get the contract abi
-    var RemixContract = new web3.eth.Contract(abi, '0x95a6AF521262E7D426467448B3E7Fd70f5E6e107');
+    var RemixContract = new web3.eth.Contract(abi, '0x71A39e5725Cc6f57F5b1CB934EEe5996C225E67F');
     // Get the contract abi
     console.log(RemixContract);
     $("#setMessageButton").click(function () {
