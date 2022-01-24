@@ -9,6 +9,6 @@ let uncle = web3.eth.getUncle(500, 0).then(console.log);
 // console.log(uncle);
 // console.log(transCount);
 let transCount = web3.eth
-  .getTransactionCount('0x1E07E1eC1559138e03EB5F0C89BEAF9bD5AB3332')
-  .then(console.log);
+    .getTransactionCount('0x1E07E1eC1559138e03EB5F0C89BEAF9bD5AB3332')
+    .then(console.log);
 console.log(transCount);

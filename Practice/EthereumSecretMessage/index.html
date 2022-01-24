@@ -2,74 +2,86 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ethereum Secret Messenger</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deploy a Remix Contract</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 </head>
 
 <body>
-  <div>
-    <h1>Ethereum Secret Messenger</h1>
-    <hr>
-    <label for="message">This site writes a secret message to the Ethereum
-      blockchain!</label>
-    <input id="userInput" type="text">
-    <button id="setMessageButton">Set secret message</button>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script>
+    <div>
+        <h1>Ethereum Secret Messenger</h1>
+        <hr>
+        <label for="message">This site writes a secret message to the Ethereum
+            blockchain!</label>
+        <input id="userInput" type="text">
+        <button id="setMessageButton">Set secret message</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+        // Connect a the web3 provider
+        if (typeof web3 !== 'undefined') {
+            console.log('setting:', window.ethereum)
+            web3 = new Web3(window.ethereum);
+        } else {
+            console.log('setting 7545')
+                // Rinkeby address from infura
+            web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/0e84ba3ddc3f489395c40973bcf2b051"));
+        }
 
-    // Connect a the web3 provider
-    if (typeof web3 !== 'undefined') {
-      web3 = new Web3(web3.currentProvider);
-    } else {
-      web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
-    }
-    // Set a default account
-    web3.eth.defaultAccount = web3.eth.accounts[0];
-    // Get abi
-    var abi = [
-      {
-        "constant": false,
-        "inputs": [
-          {
-            "name": "x",
-            "type": "string"
-          }
-        ],
-        "name": "setMessage",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "constant": true,
-        "inputs": [],
-        "name": "getMessage",
-        "outputs": [
-          {
-            "name": "",
-            "type": "string"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      }
-    ]
-    // Get the contract abi
-    var RemixContract = new web3.eth.Contract(abi, '0x71A39e5725Cc6f57F5b1CB934EEe5996C225E67F');
-    // Get the contract abi
-    console.log(RemixContract);
-    $("#setMessageButton").click(function () {
-      RemixContract.methods.setMessage($("#userInput").val());
-      console.log($("#userInput").val())
-    });
-  </script>
+        // Set a default account variable to null
+        let defAccount = null
+
+        // Set a default account
+        web3.eth.requestAccounts((error, result) => {
+                if (error) {
+                    console.log('error:', error);
+                } else {
+                    defAccount = result[0]
+                }
+            })
+            // Get the contract address
+        let RemixContract = new web3.eth.Contract([{
+            "constant": false,
+            "inputs": [{
+                "name": "x",
+                "type": "string"
+            }],
+            "name": "setMessage",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [],
+            "name": "getMessage",
+            "outputs": [{
+                "name": "",
+                "type": "string"
+            }],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }], '0x08Bf09E80b4C9ba452f5131FdE45d6552025E9b3');
+
+        $("#setMessageButton").click(() => {
+            let message = $("#userInput").val()
+            RemixContract.methods.setMessage(message).send({
+                from: defAccount
+            }).then((result) => {
+                console.log('send message:', message)
+                console.log(result)
+            }).catch(error => {
+                console.log(error)
+            });
+        });
+
+        // References: 
+        // https://knowledge.udacity.com/questions/612891
+    </script>
 </body>
 
 </html>
