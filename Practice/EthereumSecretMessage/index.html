@@ -37,38 +37,38 @@
 
         // Set a default account
         web3.eth.requestAccounts((error, result) => {
-                if (error) {
-                    console.log('error:', error);
-                } else {
-                    defAccount = result[0]
-                }
-            })
-          
-            // Set abi
-            let abi = [{
-                "constant": false,
-                "inputs": [{
-                  "name": "x",
-                  "type": "string"
-                }],
-                "name": "setMessage",
-                "outputs": [],
-                "payable": false,
-                "stateMutability": "nonpayable",
-                "type": "function"
-              }, {
-                "constant": true,
-                "inputs": [],
-                "name": "getMessage",
-                "outputs": [{
-                  "name": "",
-                  "type": "string"
-                }],
-                "payable": false,
-                "stateMutability": "view",
-                "type": "function"
-              }];
-            // Get the contract address
+            if (error) {
+                console.log('error:', error);
+            } else {
+                defAccount = result[0]
+            }
+        })
+
+        // Set abi
+        let abi = [{
+            "constant": false,
+            "inputs": [{
+                "name": "x",
+                "type": "string"
+            }],
+            "name": "setMessage",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [],
+            "name": "getMessage",
+            "outputs": [{
+                "name": "",
+                "type": "string"
+            }],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }];
+        // Get the contract address
         let RemixContract = new web3.eth.Contract(abi, '0xC5A6746eE4D4AD6B3CdDCA1e6999EF693d692F6b');
 
         $("#setMessageButton").click(() => {
