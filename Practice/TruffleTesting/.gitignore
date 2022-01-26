@@ -15,4 +15,4 @@
 .env.development.local
 .env.test.local
 .env.production.local
-.truffle-config.js
+truffle-config.js
