@@ -22,6 +22,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script>
         // Connect a the web3 provider
+        // Correction referenced form https://ethereum.stackexchange.com/questions/26244/how-can-i-get-my-address-via-web3
         if (typeof web3 !== 'undefined') {
             console.log('setting:', window.ethereum)
             web3 = new Web3(window.ethereum);
@@ -42,30 +43,33 @@
                     defAccount = result[0]
                 }
             })
+          
+            // Set abi
+            let abi = [{
+                "constant": false,
+                "inputs": [{
+                  "name": "x",
+                  "type": "string"
+                }],
+                "name": "setMessage",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+              }, {
+                "constant": true,
+                "inputs": [],
+                "name": "getMessage",
+                "outputs": [{
+                  "name": "",
+                  "type": "string"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+              }];
             // Get the contract address
-        let RemixContract = new web3.eth.Contract([{
-            "constant": false,
-            "inputs": [{
-                "name": "x",
-                "type": "string"
-            }],
-            "name": "setMessage",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        }, {
-            "constant": true,
-            "inputs": [],
-            "name": "getMessage",
-            "outputs": [{
-                "name": "",
-                "type": "string"
-            }],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        }], '0x08Bf09E80b4C9ba452f5131FdE45d6552025E9b3');
+        let RemixContract = new web3.eth.Contract(abi, '0xC5A6746eE4D4AD6B3CdDCA1e6999EF693d692F6b');
 
         $("#setMessageButton").click(() => {
             let message = $("#userInput").val()
@@ -81,6 +85,7 @@
 
         // References: 
         // https://knowledge.udacity.com/questions/612891
+        // https://classroom.udacity.com/nanodegrees/nd1309/parts/cd0597/modules/268acd3a-2489-4bb9-97f2-b1578ae3e88c/lessons/aa7bfd12-ded2-41e6-8d71-08204c344db8/concepts/687b12e1-1a98-4c72-a3e7-4d961a11afe5
     </script>
 </body>
 
