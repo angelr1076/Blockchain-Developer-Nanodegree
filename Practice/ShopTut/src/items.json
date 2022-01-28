@@ -1,0 +1,97 @@
+[{
+        "id": 0,
+        "name": "Junk",
+        "picture": "images/scottish-terrier.jpeg",
+        "location": "Lisco, Alabama"
+    },
+    {
+        "id": 1,
+        "name": "Junk",
+        "picture": "images/scottish-terrier.jpeg",
+        "location": "Tooleville, West Virginia"
+    },
+    {
+        "id": 2,
+        "name": "Junk",
+        "picture": "images/french-bulldog.jpeg",
+        "location": "Freeburn, Idaho"
+    },
+    {
+        "id": 3,
+        "name": "Junk",
+        "picture": "images/boxer.jpeg",
+        "location": "Camas, Pennsylvania"
+    },
+    {
+        "id": 4,
+        "name": "Junk",
+        "picture": "images/french-bulldog.jpeg",
+        "location": "Gerber, South Dakota"
+    },
+    {
+        "id": 5,
+        "name": "Junk",
+        "picture": "images/french-bulldog.jpeg",
+        "location": "Innsbrook, Illinois"
+    },
+    {
+        "id": 6,
+        "name": "Junk",
+        "picture": "images/golden-retriever.jpeg",
+        "location": "Soudan, Louisiana"
+    },
+    {
+        "id": 7,
+        "name": "Junk",
+        "picture": "images/golden-retriever.jpeg",
+        "location": "Jacksonwald, Palau"
+    },
+    {
+        "id": 8,
+        "name": "Junk",
+        "picture": "images/french-bulldog.jpeg",
+        "location": "Honolulu, Hawaii"
+    },
+    {
+        "id": 9,
+        "name": "Junk",
+        "picture": "images/boxer.jpeg",
+        "location": "Matheny, Utah"
+    },
+    {
+        "id": 10,
+        "name": "Junk",
+        "picture": "images/scottish-terrier.jpeg",
+        "location": "Windsor, Montana"
+    },
+    {
+        "id": 11,
+        "name": "Junk",
+        "picture": "images/scottish-terrier.jpeg",
+        "location": "Windsor, Montana"
+    },
+    {
+        "id": 12,
+        "name": "Junk",
+        "picture": "images/french-bulldog.jpeg",
+        "location": "Kingstowne, Nevada"
+    },
+    {
+        "id": 13,
+        "name": "Junk",
+        "picture": "images/golden-retriever.jpeg",
+        "location": "Sultana, Massachusetts"
+    },
+    {
+        "id": 14,
+        "name": "Junk",
+        "picture": "images/golden-retriever.jpeg",
+        "location": "Broadlands, Oregon"
+    },
+    {
+        "id": 15,
+        "name": "Junk",
+        "picture": "images/golden-retriever.jpeg",
+        "location": "Dawn, Wisconsin"
+    }
+]

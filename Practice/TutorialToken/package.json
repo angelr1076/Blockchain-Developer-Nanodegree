@@ -1,22 +1,19 @@
 {
-  "name": "tutorialtoken",
-  "version": "1.0.0",
-  "description": "",
-  "main": "truffle.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "lite-server": "^2.3.0"
-  }
+    "name": "tutorialtoken",
+    "version": "1.0.0",
+    "description": "",
+    "main": "truffle.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "dev": "lite-server",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@openzeppelin/contracts": "^4.4.2",
+        "lite-server": "^2.3.0"
+    }
 }
-
-// References
-// https://docs.openzeppelin.com/contracts/4.x/wizard
-// https://knowledge.udacity.com/questions/758557
