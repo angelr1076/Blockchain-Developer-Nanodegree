@@ -9,6 +9,7 @@
     <title>Messages</title>
 
     <!-- Bootstrap -->
+    <link href="css/main.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -45,7 +46,7 @@
                     <hr>
                     <label for="message">This site writes a secret message to the Ethereum
                       blockchain!</label>
-                    <input id="userInput" type="text">
+                    <input id="userInput" class="userInput" type="text">
                     <button id="setMessageButton" class="btn btn-default btn-buy" type="button" data-id="0">Set secret message</button>
                 </div>
             </div>
@@ -53,12 +54,12 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
     <script src="js/app.js"></script>
 </body>
 
