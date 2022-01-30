@@ -1,0 +1,91 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "name",
+						"type": "bytes32"
+					}
+				],
+				"name": "getName",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_lastName",
+						"type": "bytes32"
+					},
+					{
+						"name": "_value",
+						"type": "uint8"
+					},
+					{
+						"name": "_age",
+						"type": "uint16"
+					}
+				],
+				"name": "addName",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/structs.sol": "StructsContract"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/structs.sol": {
+			"keccak256": "0x58fb24c5bbb91fc9efd11ed0518c7a07a74054edba18446214705dfdf4b62bba",
+			"urls": [
+				"bzzr://e84502926a401864f126239a091fc7f93f4644e41c5c6ae42f13b5b67af5dd3a"
+			]
+		}
+	},
+	"version": 1
+}

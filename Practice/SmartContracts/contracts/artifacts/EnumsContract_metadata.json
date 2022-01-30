@@ -1,0 +1,56 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "arg",
+						"type": "uint8"
+					}
+				],
+				"name": "getNames",
+				"outputs": [
+					{
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/enums.sol": "EnumsContract"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/enums.sol": {
+			"keccak256": "0x93e6e1543244c76d6eb66611f4cbd347a9d63d43e947e01ad9d443faa1703a9d",
+			"urls": [
+				"bzzr://3a16b3841986d9be188be8038b6d12c00a79301de9e2a47ceb48c5e860409c77"
+			]
+		}
+	},
+	"version": 1
+}
