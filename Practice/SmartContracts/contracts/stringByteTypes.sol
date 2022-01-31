@@ -1,4 +1,5 @@
-pragma solidity >=0.4.22 <0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
 contract StringBytes {
     // Static byte arrays, Both declarations will create array with 3 byte elements
