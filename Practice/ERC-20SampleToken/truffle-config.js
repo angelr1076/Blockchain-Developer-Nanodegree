@@ -19,10 +19,12 @@
  */
 
 const HDWalletProvider = require('truffle-hdwallet-provider');
-const infuraKey = '<Infura ProjectID>';
+require('dotenv').config();
+
+const infuraKey = process.env.INFURA_PROJECTID;
 //
 // const fs = require('fs');
-const mnemonic = '<METAMASK SEED>';
+const mnemonic = process.env.METAMASK_SEED;
 
 module.exports = {
   networks: {
