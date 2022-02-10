@@ -149,5 +149,7 @@ compilers: {
 
 Do not use the [Old depreacted zipped starter code](https://s3.amazonaws.com/video.udacity-data.com/topher/2019/January/5c51c4c0_project-5-starter-code/project-5-starter-code.zip)
 
+### OpenZeppelin ERC-721 Docs [https://docs.openzeppelin.com/contracts/3.x/api/token/erc721](ERC-721)
+
 ### Issues installing Truffle on MacOS [Link](https://stackoverflow.com/questions/49348482/npm-install-with-error-gyp-failed-with-exit-code-1)
 
