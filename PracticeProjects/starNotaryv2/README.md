@@ -1,5 +1,7 @@
 # StarNotary v2
 
+### Note: the Solidity version in this GitHub repo is using v0.4.24. Please ensure you install the same version to avoid potential breaking changes with the later versions
+
 Links:
 
 - [ERC721 Org](http://erc721.org/)
