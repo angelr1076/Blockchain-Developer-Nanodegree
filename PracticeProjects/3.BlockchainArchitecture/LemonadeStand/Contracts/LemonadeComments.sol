@@ -1,33 +1,63 @@
+pragma solidity ^0.4.24;
 // Define a Supply Chain Contract "LemonadeStand"
+contract LemonadeStand {
 
-// Variable: 'Owner'
+  // Variable: 'Owner'
+  address owner;
+  // Variable: 'skuCount'
+  uint skuCount;
 
-// Variable: 'skuCount'
+  // State: For Sale
+  enum State { ForSale, Sold }
 
-// State: For Sale
+  // Struct 'Item' with the following fields: name, sku, price, state, seller, buyer
+  struct Item {
+    string name;
+    uint sku;
+    uint price;
+    State state;
+    address seller;
+    address buyer;
+  }
+  // Mapping: Assign 'Item' a SKU
+  mapping (uint => Item) items;
 
-// Struct 'Item' with the following fields: name, sku, price, state, seller, buyer
+  // Event ForSale
+  event ForSale(uint skuCount);
+  // Event Sold
+  event Sold(uint sku);
 
-// Mapping: Assign 'Item' a SKU
+  // Modifier: Only Owner
+  modifier onlyOwner() {
+    require(msg.sender == owner);
+    _;
+  }
+  // Modifier: Verify Caller
+  modifier verifyCaller(address _address) {
+    require(msg.sender == _address);
+    _;
+  }
+  // Modifier: Paid Enough
+  modifier padEnough(uint price) {
+    require(msg.value >= _price);
+    _;
+  }
+  // Modifier: For Sale
+  modifier forSale(uint sku) {
+    require(items[_sku].state == State.ForSale);
+    _;
+  }
+  // Modifier: Sold
+  modifer sold(uint _sku) {
+    require(item[_sku].state == State.Sold);
+    _;
+  }
+  // Function: Constructor to set some initial values
 
-// Event ForSale
+  // Function: Add Item
 
-// Event Sold
+  // Function: Buy Item
 
-// Modifier: Only Owner
+  // Function: Fetch Item
 
-// Modifier: Verify Caller
-
-// Modifier: Paid Enough
-
-// Modifier: For Sale
-
-// Modifier: Sold
-
-// Function: Constructor to set some initial values
-
-// Function: Add Item
-
-// Function: Buy Item
-
-// Function: Fetch Item
+}
