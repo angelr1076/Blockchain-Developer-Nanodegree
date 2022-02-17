@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.4.24;
 
 // Define a contract 'Lemonade Stand'
@@ -10,7 +11,7 @@ contract LemonadeStand {
     uint skuCount;
 
     // Event: 'State' with value 'ForSale'
-    enum State { ForSale, Sold }
+    enum State { ForSale, Sold, Shipped }
 
     // Struct: Item. name, sku, price, state, seller, buyer
     struct Item {
@@ -28,6 +29,7 @@ contract LemonadeStand {
     // Events
     event ForSale(uint skuCount);
     event Sold(uint sku);
+    event Shipped(uint sku);
 
     // Modifier: Only Owner see if msg.sender == owner of the contract
     modifier onlyOwner() {
@@ -59,6 +61,14 @@ contract LemonadeStand {
         _;
     }
 
+    // Define a modifier that checks the price and refunds the remaining balance
+    modifier checkValue(uint _sku) {
+        _;
+        uint _price = items[_sku].price;
+        uint amountToRefund = msg.value - _price;
+        items[_sku].buyer.transfer(amountToRefund);
+    }
+
     constructor() public payable {
         owner = msg.sender;
         skuCount = 0;
@@ -75,7 +85,7 @@ contract LemonadeStand {
         items[skuCount] = Item({name: _name, sku: skuCount, price: _price, state: State.ForSale, seller: msg.sender, buyer: 0});
     }
 
-    function buyItem(uint sku) forSale(sku) paidEnough(items[sku].price) public payable{
+    function buyItem(uint sku) forSale(sku) paidEnough(items[sku].price) checkValue(sku) public payable {
         address buyer = msg.sender;
         uint price = items[sku].price;
 
@@ -92,6 +102,14 @@ contract LemonadeStand {
         emit Sold(sku);
     }
 
+    // Define a function 'shipItem' that allows the seller to change the state to 'Shipped'
+    function shipItem(uint sku) sold(sku) sold(sku) verifyCaller(items[sku].seller) public {
+        // Update state
+        items[sku].state = State.Shipped;
+        // Emit the appropriate event
+        emit Shipped(sku);
+    }
+
     function fetchItem(uint _sku) public view returns (string name, uint sku, uint price, string stateIs, address seller, address buyer) {
         uint state;
         name = items[_sku].name;
@@ -105,6 +123,10 @@ contract LemonadeStand {
 
         if( state == 1) {
             stateIs = "Sold";
+        }
+
+        if (state == 2) {
+            stateIs = "Shipped";
         }
 
         seller = items[_sku].seller;
