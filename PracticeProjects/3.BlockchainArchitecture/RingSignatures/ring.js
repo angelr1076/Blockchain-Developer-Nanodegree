@@ -9,6 +9,8 @@ var alice = lrs.gen();
 var bob = lrs.gen();
 var eve = lrs.gen();
 
+console.log('lrs library: ', lrs.methods);
+
 // The list of public key is known and distributed
 var group = [alice, bob, eve].map(m => m.publicKey);
 
