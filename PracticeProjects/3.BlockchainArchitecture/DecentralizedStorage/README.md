@@ -49,3 +49,36 @@ ipfs add hello-ipfs.txt
 See Final Version of Text File in IPFS Gateway
 
 https://gateway.ipfs.io/ipfs/<hash-value>
+
+
+Commands
+Add Image to IPFS
+
+ipfs add image.jpg
+Read Image from IPFS
+
+ipfs cat <image-hash-value>
+See Image in IPFS Gateway
+
+https://gateway.ipfs.io/ipfs/<image-hash-value>
+Add PDF to IPFS
+
+ipfs add book.pdf
+Add Video to IPFS
+
+ipfs add video.mp4
+Add Directory to IPFS
+
+ipfs add -r folder
+Show Video in Browser
+
+https://gateway.ipfs.io/ipfs/<video-hash-value>
+View Directory Contents from IPFS
+
+ipfs ls <hash value of directory>
+View Directory in IPFS Gateway
+
+https://gateway.ipfs.io/ipfs/<directory-hash-value>
+View files in WebUI
+
+http://localhost:5001/webui
