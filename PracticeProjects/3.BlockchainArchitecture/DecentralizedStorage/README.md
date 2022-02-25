@@ -4,6 +4,8 @@
 
 Content Based Addressing vs Location Based Addressing (HTTP)
 
+[IPFS docs](https://docs.ipfs.io/)
+
 [Install IPFS](https://docs.ipfs.io/install/)
 
 See instructions on installing on MacOS and Windows as admin
