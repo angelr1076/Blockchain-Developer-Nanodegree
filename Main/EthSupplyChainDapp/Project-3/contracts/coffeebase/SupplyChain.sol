@@ -1,4 +1,7 @@
 pragma solidity ^0.4.24;
+
+// Define a contract 'Supplychain' that inherits from the role contracts // From Alvaro Andres' project description https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55
+
 // Define a contract 'Supplychain'
 contract SupplyChain {
 
@@ -261,6 +264,10 @@ contract SupplyChain {
     // Emit the appropriate event
     
   }
+
+// From Alvaro Andres' project description https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55
+  // Define a function 'fetchItemBufferOne' that fetches the data
+//   The purpose of these functions is to return the information of the item or product in the supplychain. You can’t return more than 9 output arguments in a function and that is   the reason why there are 2 functions and not just 1
 
   // Define a function 'fetchItemBufferOne' that fetches the data
   function fetchItemBufferOne(uint _upc) public view returns 
