@@ -6,10 +6,10 @@
 
 ### Requirement 1: Project write-up - UML
 
-![Sequence Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,w_500/v1645975448/BlockchainDevNanodegree/Project3/sequence-diagram.png)
-![State Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_298,w_500/v1645975448/BlockchainDevNanodegree/Project3/state-diagram.png)
-![Sequence Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_298,w_500/v1645975448/BlockchainDevNanodegree/Project3/activity-diagram.png)
-![Sequence Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_298,w_500/v1645975448/BlockchainDevNanodegree/Project3/data-modeling.png)
+![Flow Sequence Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeFlowSeqDiagram.png)
+![State Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeBeanStateDiagram.png)
+![Data Model Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeDataModDiagram.png)
+![Activity Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeActivityDiagram.png)
 
 ### Requirement 2: Project write-up - Libraries
 
