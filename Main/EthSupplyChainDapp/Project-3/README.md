@@ -1,4 +1,4 @@
-# Project 3 - Bait to Plate
+# Project 3 - Coffee Bean Supply Chain
 
 [Architect a Blockchain Dapp](https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55)
 
