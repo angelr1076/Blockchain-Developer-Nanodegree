@@ -1,9 +1,9 @@
 pragma solidity ^0.4.24;
 
-// Define a contract 'Supplychain' that inherits from the role contracts // From Alvaro Andres' project description https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55
+// Define a contract 'Supplychain' that inherits from the role contracts 
 
 // Define a contract 'Supplychain'
-contract SupplyChain {
+contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, DistributorRole {
 
   // Define 'owner'
   address owner;
@@ -19,6 +19,7 @@ contract SupplyChain {
 
   // Define a public mapping 'itemsHistory' that maps the UPC to an array of TxHash, 
   // that track its journey through the supply chain -- to be sent from DApp.
+  // You can disregard itemsHistory. I’ve already reported it to the project team and still waiting for official advice. However, looking at the materials provided to us in evaluating submissions, there is also no mention nor use of this mapping. Previous work also dont check for this. Thus, I think it can be ignored until we get clarification on its use.
   mapping (uint => string[]) itemsHistory;
   
   // Define enum 'State' with the following values:
@@ -71,6 +72,7 @@ contract SupplyChain {
     _;
   }
 
+  // verifyCaller is used to make sure that the expected caller is the one calling the function. For example, if Bob is the originalFarmer of the coffee, then his address should only be the one to execute SellItem() for that particular item. If you just check using onlyFarmer() then another farmer (e.g. Bruce) can also execute this function for Bob’s item and depending on the implementation, he might be the one getting the payment instead of Bob.
   // Define a modifer that verifies the Caller
   modifier verifyCaller (address _address) {
     require(msg.sender == _address); 
@@ -267,7 +269,7 @@ contract SupplyChain {
 
 // From Alvaro Andres' project description https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55
   // Define a function 'fetchItemBufferOne' that fetches the data
-//   The purpose of these functions is to return the information of the item or product in the supplychain. You can’t return more than 9 output arguments in a function and that is   the reason why there are 2 functions and not just 1
+//   The purpose of these functions is to return the information of the item or product in the supplychain. You can’t return more than 9 output arguments in a function and that is the reason why there are 2 functions and not just 1
 
   // Define a function 'fetchItemBufferOne' that fetches the data
   function fetchItemBufferOne(uint _upc) public view returns 

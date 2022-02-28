@@ -63,3 +63,12 @@ This Core Contract must implement:
 
 - Ownable: Define an owner for all the contracts.
 - Secondary: Allows contract to be transferred owners.
+
+### Project Todos:
+
+- Make sure that you added all the roles and implemented the roles that were not complete, based on the code of a role that is implemented in the boilerplate
+- Use the roles in the supplychain contract
+- Complete the functions in the supplychain contract that are not finished
+- Add the functions that are missing according to your UMLs
+- Tests all of the functions in the supplychain contract
+- Make sure that the Dapp works

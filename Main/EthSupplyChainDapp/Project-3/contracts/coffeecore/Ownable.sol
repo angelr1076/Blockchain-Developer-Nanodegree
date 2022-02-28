@@ -1,5 +1,8 @@
 pragma solidity ^0.4.24;
 
+// Ownable.sol is not for transferring the ownership of an item (coffee) from one address to an other one. But to transfer the ownership of the contract. In some contracts the owner has some special administrative functions that only can be executed by the owner and that is the reason that the modifier onlyOwnerexists.
+// https://docs.openzeppelin.org/docs/learn-about-access-control.html
+
 /// Provides basic authorization control
 contract Ownable {
     address private origOwner;
@@ -41,7 +44,7 @@ contract Ownable {
     }
 
     /// Define an internal function to transfer ownership
-    function _transferOwnership(address newOwner) internal {`
+    function _transferOwnership(address newOwner) internal {
         require(newOwner != address(0));
         emit TransferOwnership(origOwner, newOwner);
         origOwner = newOwner;
