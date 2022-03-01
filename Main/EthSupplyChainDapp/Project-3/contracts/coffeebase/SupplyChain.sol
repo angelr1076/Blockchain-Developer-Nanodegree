@@ -101,49 +101,49 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
 
   // Define a modifier that checks if an item.state of a upc is Harvested
   modifier harvested(uint _upc) {
-    require(items[_upc].itemState == State.Harvested);
+    require(items[_upc].itemState == State.Harvested, "Error, item is not in the harvested state");
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Processed
   modifier processed(uint _upc) {
-    require(items[_upc].itemState == State.Processed);
+    require(items[_upc].itemState == State.Processed, "Error, item is not in the processed state");
     _;
   }
   
   // Define a modifier that checks if an item.state of a upc is Packed
   modifier packed(uint _upc) {
-    require(items[_upc].itemState == State.Packed);
+    require(items[_upc].itemState == State.Packed, "Error, item is not in the packed state");
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is ForSale
   modifier forSale(uint _upc) {
-    require(items[_upc].itemState == State.ForSale);
+    require(items[_upc].itemState == State.ForSale, "Error, item is not in the forSale state");
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Sold
   modifier sold(uint _upc) {
-    require(items[_upc].itemState == State.Sold);
+    require(items[_upc].itemState == State.Sold, "Error, item is not in the sold state");
     _;
   }
   
   // Define a modifier that checks if an item.state of a upc is Shipped
   modifier shipped(uint _upc) {
-    require(items[_upc].itemState == State.Shipped);
+    require(items[_upc].itemState == State.Shipped, "Error, item is not in the shipped state");
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Received
   modifier received(uint _upc) {
-    require(items[_upc].itemState == State.Received);
+    require(items[_upc].itemState == State.Received, "Error, item is not in the received state");
     _;
   }
 
   // Define a modifier that checks if an item.state of a upc is Purchased
   modifier purchased(uint _upc) {
-    require(items[_upc].itemState == State.Purchased);
+    require(items[_upc].itemState == State.Purchased, "Error, item is not in the purchased state");
     _;
   }
 
@@ -157,17 +157,37 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   }
 
   // Define a function 'kill' if required
-  // function kill() public {
-  //   if (msg.sender == owner) {
-  //     selfdestruct(owner);
-  //   }
-  // }
+  function kill() public {
+    if (msg.sender == owner()) {
+      selfdestruct(owner());
+    }
+  }
 
   // Define a function 'harvestItem' that allows a farmer to mark an item 'Harvested'
-  function harvestItem(uint _upc, address _originFarmerID, string memory _originFarmName, string memory _originFarmInformation, string memory _originFarmLatitude, string memory  _originFarmLongitude, string memory _productNotes) public 
+  function harvestItem(
+    uint _upc, 
+    address _originFarmerID, 
+    string memory _originFarmName, 
+    string memory _originFarmInformation, 
+    string memory _originFarmLatitude, 
+    string memory  _originFarmLongitude, 
+    string memory _productNotes) 
+    public 
+    onlyFarmer
   {
     // Add the new item as part of Harvest
-    // items[_upc].harvested;
+    items[_upc].upc = _upc;
+    items[_upc].sku = sku;
+    items[_upc].ownerID = _originFarmerID;
+    items[_upc].originFarmName = _originFarmName;
+    items[_upc].originFarmInformation = _originFarmInformation;
+    items[_upc].originFarmInformation = _originFarmInformation;
+    items[_upc].originFarmLatitude = _originFarmLatitude;
+    items[_upc].originFarmLongitude = _originFarmLongitude;
+    items[_upc].productID = _upc + sku;
+    items[_upc].productNotes = _productNotes;
+    items[_upc].itemState = State.Harvested;
+
     // Increment sku
     sku = sku + 1;
     // Emit the appropriate event

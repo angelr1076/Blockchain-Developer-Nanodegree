@@ -12,5 +12,8 @@
   "license": "MIT",
   "devDependencies": {
     "lite-server": "2.4.0"
+  },
+  "dependencies": {
+    "@truffle/contract": "^4.4.10"
   }
 }
