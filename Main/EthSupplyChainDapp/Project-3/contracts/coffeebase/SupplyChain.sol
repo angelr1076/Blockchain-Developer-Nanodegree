@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.4.24;
 
 // Import contracts from contracts folders
@@ -150,20 +151,20 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   // and set 'sku' to 1
   // and set 'upc' to 1
   constructor() public payable {
-    owner = msg.sender;
+    // owner = msg.sender;
     sku = 1;
     upc = 1;
   }
 
   // Define a function 'kill' if required
-  function kill() public {
-    if (msg.sender == owner) {
-      selfdestruct(owner);
-    }
-  }
+  // function kill() public {
+  //   if (msg.sender == owner) {
+  //     selfdestruct(owner);
+  //   }
+  // }
 
   // Define a function 'harvestItem' that allows a farmer to mark an item 'Harvested'
-  function harvestItem(uint _upc, address _originFarmerID, string _originFarmName, string _originFarmInformation, string  _originFarmLatitude, string  _originFarmLongitude, string  _productNotes) public 
+  function harvestItem(uint _upc, address _originFarmerID, string memory _originFarmName, string memory _originFarmInformation, string memory _originFarmLatitude, string memory  _originFarmLongitude, string memory _productNotes) public 
   {
     // Add the new item as part of Harvest
     // items[_upc].harvested;
@@ -283,10 +284,10 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   uint    itemUPC,
   address ownerID,
   address originFarmerID,
-  string  originFarmName,
-  string  originFarmInformation,
-  string  originFarmLatitude,
-  string  originFarmLongitude
+  string memory originFarmName,
+  string memory originFarmInformation,
+  string memory originFarmLatitude,
+  string memory originFarmLongitude
   ) 
   {
   // Assign values to the 8 parameters
@@ -311,7 +312,7 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   uint    itemSKU,
   uint    itemUPC,
   uint    productID,
-  string  productNotes,
+  string memory productNotes,
   uint    productPrice,
   uint    itemState,
   address distributorID,
