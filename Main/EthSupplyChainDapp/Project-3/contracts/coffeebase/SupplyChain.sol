@@ -1,10 +1,17 @@
 pragma solidity ^0.4.24;
 
+// Import contracts from contracts folders
+import "../CoffeeCore/Ownable.sol";
+import "../CoffeeAccessControl/FarmerRole.sol";
+import "../CoffeeAccessControl/ConsumerRole.sol";
+import "../CoffeeAccessControl/RetailerRole.sol";
+import "../CoffeeAccessControl/DistributorRole.sol";
+
 // Define a contract 'Supplychain' that inherits from the role contracts 
 contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, DistributorRole {
 
   // Define 'owner'
-  address owner;
+  // address owner;
 
   // Define a variable called 'upc' for Universal Product Code (UPC)
   uint  upc;
@@ -65,10 +72,10 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   event Purchased(uint upc);
 
   // Define a modifer that checks to see if msg.sender == owner of the contract
-  modifier onlyOwner() {
-    require(msg.sender == owner);
-    _;
-  }
+  // modifier onlyOwner() {
+  //   require(msg.sender == owner);
+  //   _;
+  // }
 
   // verifyCaller is used to make sure that the expected caller is the one calling the function. For example, if Bob is the originalFarmer of the coffee, then his address should only be the one to execute SellItem() for that particular item. If you just check using onlyFarmer() then another farmer (e.g. Bruce) can also execute this function for Bob’s item and depending on the implementation, he might be the one getting the payment instead of Bob.
   // Define a modifer that verifies the Caller
