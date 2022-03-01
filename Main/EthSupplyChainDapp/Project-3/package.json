@@ -1,19 +1,21 @@
 {
-  "name": "supply-chain-E",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "pk <pkrasam@gmail.com> (https://ipfs.infura.io/ipfs/QmSXiR9Khm3yo1J67nUopvVBxFJ8YGN2fUGZ34Etr3m92x/)",
-  "license": "MIT",
-  "devDependencies": {
-    "lite-server": "2.4.0"
-  },
-  "dependencies": {
-    "@truffle/contract": "^4.4.10"
-  }
+    "name": "supply-chain-E",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "lite-server",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "ar <angelr1076@gmail.com> (https://ipfs.infura.io/ipfs/QmSXiR9Khm3yo1J67nUopvVBxFJ8YGN2fUGZ34Etr3m92x/)",
+    "license": "MIT",
+    "devDependencies": {
+        "lite-server": "2.4.0",
+        "prettier": "^2.5.1",
+        "prettier-plugin-solidity": "^1.0.0-beta.19"
+    },
+    "dependencies": {
+        "@truffle/contract": "^4.4.10"
+    }
 }
