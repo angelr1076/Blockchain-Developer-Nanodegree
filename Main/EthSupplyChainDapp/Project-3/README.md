@@ -83,7 +83,10 @@ purchaseItem()
 fetchItemBufferOne()
 fetchItemBufferTwo()
 
-Launch Ganache from the terminal in the project-3 folder
+![image](https://user-images.githubusercontent.com/29229469/156370859-a29f3307-3a49-449e-871b-feb0a36f868d.png)
+
+Launch Ganache from the terminal within the project-3 folder
+
 ```ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"```
 
 
