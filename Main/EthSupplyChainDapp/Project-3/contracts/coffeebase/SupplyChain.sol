@@ -187,7 +187,6 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
     items[_upc].productID = _upc + sku;
     items[_upc].productNotes = _productNotes;
     items[_upc].itemState = State.Harvested;
-
     // Increment sku
     sku = sku + 1;
     // Emit the appropriate event
@@ -201,7 +200,6 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
 
     // Call modifier to verify caller of this function
     verifyCaller(items[_upc].originFarmerID)
-
   {
     // Update the appropriate fields
     items[_upc].itemState = State.Processed;
@@ -280,24 +278,30 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
     // Call modifier to check if upc has passed previous supply chain stage
     shipped(_upc)
     // Access Control List enforced by calling Smart Contract / DApp
+    onlyRetailer()
     {
     // Update the appropriate fields - ownerID, retailerID, itemState
-    
+    items[_upc].ownerID = msg.sender;
+    items[_upc].retailerID = msg.sender;
+    items{_upc].itemState = State.Received;
     // Emit the appropriate event
-    
+    emit Received(_upc);
   }
 
   // Define a function 'purchaseItem' that allows the consumer to mark an item 'Purchased'
   // Use the above modifiers to check if the item is received
   function purchaseItem(uint _upc) public 
     // Call modifier to check if upc has passed previous supply chain stage
-    
+    received(_upc)
     // Access Control List enforced by calling Smart Contract / DApp
+    onlyConsumer()
     {
     // Update the appropriate fields - ownerID, consumerID, itemState
-    
+    items[_upc].ownerID = msg.sender;
+    items[_upc].consumerID = msg.sender;
+    items{_upc].itemState = State.Purchased;
     // Emit the appropriate event
-    
+    emit Purchased(_upc);
   }
 
 // From Alvaro Andres' project description https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55
