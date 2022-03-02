@@ -173,7 +173,7 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
     string memory  _originFarmLongitude, 
     string memory _productNotes) 
     public 
-    onlyFarmer
+    onlyFarmer()
   {
     // Add the new item as part of Harvest
     items[_upc].upc = _upc;
@@ -229,7 +229,7 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   {
     // Update the appropriate fields
     items[_upc].itemState = State.ForSale;
-    items[_upc].price = _price;
+    items[_upc].productPrice = _price;
 
     // Emit the appropriate event
     emit ForSale(_upc);
@@ -250,10 +250,10 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
     // Update the appropriate fields - ownerID, distributorID, itemState
     items[_upc].ownerID = msg.sender;
     items[_upc].distributorID = msg.sender;
-    items{_upc].itemState = State.Sold;
+    items[_upc].itemState = State.Sold;
 
     // Transfer money to farmer
-    items[_upc].originFarmerID.transfer(items[_upc].productPrice);
+    items[_upc].distributorID.transfer(items[_upc].productPrice);
     // emit the appropriate event
     emit Sold(_upc);
   }
@@ -283,7 +283,7 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
     // Update the appropriate fields - ownerID, retailerID, itemState
     items[_upc].ownerID = msg.sender;
     items[_upc].retailerID = msg.sender;
-    items{_upc].itemState = State.Received;
+    items[_upc].itemState = State.Received;
     // Emit the appropriate event
     emit Received(_upc);
   }
@@ -299,7 +299,7 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
     // Update the appropriate fields - ownerID, consumerID, itemState
     items[_upc].ownerID = msg.sender;
     items[_upc].consumerID = msg.sender;
-    items{_upc].itemState = State.Purchased;
+    items[_upc].itemState = State.Purchased;
     // Emit the appropriate event
     emit Purchased(_upc);
   }
@@ -311,8 +311,8 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   // Define a function 'fetchItemBufferOne' that fetches the data
   function fetchItemBufferOne(uint _upc) public view returns 
   (
-  uint    itemSKU,
-  uint    itemUPC,
+  uint itemSKU,
+  uint itemUPC,
   address ownerID,
   address originFarmerID,
   string memory originFarmName,
@@ -321,50 +321,70 @@ contract SupplyChain is Ownable, FarmerRole, ConsumerRole, RetailerRole, Distrib
   string memory originFarmLongitude
   ) 
   {
-  // Assign values to the 8 parameters
-  
+    // Assign items from Item struct
+    Item memory item = items[_upc];
+    // Assign values to the 8 parameters
+    itemSKU = item.sku;
+    itemUPC = item.upc;
+    ownerID = item.ownerID;
+    originFarmerID = item.originFarmerID;
+    originFarmName = item.originFarmName;
+    originFarmInformation = item.originFarmInformation;
+    originFarmLatitude = item.originFarmLatitude;
+    originFarmLongitude = item.originFarmLongitude;
     
   return 
   (
-  itemSKU,
-  itemUPC,
-  ownerID,
-  originFarmerID,
-  originFarmName,
-  originFarmInformation,
-  originFarmLatitude,
-  originFarmLongitude
+    itemSKU,
+    itemUPC,
+    ownerID,
+    originFarmerID,
+    originFarmName,
+    originFarmInformation,
+    originFarmLatitude,
+    originFarmLongitude
   );
   }
 
   // Define a function 'fetchItemBufferTwo' that fetches the data
   function fetchItemBufferTwo(uint _upc) public view returns 
   (
-  uint    itemSKU,
-  uint    itemUPC,
-  uint    productID,
+  uint itemSKU,
+  uint itemUPC,
+  uint productID,
   string memory productNotes,
-  uint    productPrice,
-  uint    itemState,
+  uint productPrice,
+  uint itemState,
   address distributorID,
   address retailerID,
   address consumerID
   ) 
   {
+    // Assign items from Item struct
+    Item memory item = items[_upc];
     // Assign values to the 9 parameters
+    itemSKU = item.sku;
+    itemUPC = item.upc;
+    productID = item.productID;
+    productNotes = item.productNotes;
+    productPrice = item.productPrice;
+    itemState = uint256(item.itemState);
+    distributorID = item.distributorID;
+    retailerID = item.retailerID;
+    consumerID = item.consumerID;
   
     
   return 
   (
-  itemSKU,
-  itemUPC,
-  productID,
-  productNotes,
-  productPrice,
-  itemState,
-  distributorID,
-  retailerID,
-  consumerID
+    itemSKU,
+    itemUPC,
+    productID,
+    productNotes,
+    productPrice,
+    itemState,
+    distributorID,
+    retailerID,
+    consumerID
   );
   }
 }
