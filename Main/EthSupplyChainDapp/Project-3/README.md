@@ -64,24 +64,24 @@ This Core Contract must implement:
 - Ownable: Define an owner for all the contracts.
 - Secondary: Allows contract to be transferred owners.
 
-Part 3: Test smart contract code coverage
-Requirement: Smart contract has associated tests
+### Part 3: Test smart contract code coverage
+#### Requirement: Smart contract has associated tests
 For this project, as with any project, make sure to test your smart contracts to ensure they are working properly in different situations without any risk.
 
 
-Requirement: Smart contract has associated tests
+#### Requirement: Smart contract has associated tests
 At minimum, test every function for every function you implemented from your Sequence Diagram. For example, from this Sequence Diagram we would need to test 10 functions:
 
-harvestItem()
-processItem()
-packItem()
-addItem()
-buyItem()
-shiptItem()
-receiveItem()
-purchaseItem()
-fetchItemBufferOne()
-fetchItemBufferTwo()
+- harvestItem()
+- processItem()
+- packItem()
+- addItem()
+- buyItem()
+- shiptItem()
+- receiveItem()
+- purchaseItem()
+- fetchItemBufferOne()
+- fetchItemBufferTwo()
 
 ![image](https://user-images.githubusercontent.com/29229469/156370859-a29f3307-3a49-449e-871b-feb0a36f868d.png)
 
