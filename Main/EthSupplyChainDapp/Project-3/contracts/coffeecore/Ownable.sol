@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.4.24;
+pragma solidity >=0.4.24;
 
 // Ownable.sol is not for transferring the ownership of an item (coffee) from one address to an other one. 
 // But to transfer the ownership of the contract. In some contracts the owner has some special administrative 

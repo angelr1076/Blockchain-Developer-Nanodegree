@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.4.24;
+pragma solidity >=0.4.24;
 
 // Import contracts from contracts folders
 import "../CoffeeCore/Ownable.sol";
