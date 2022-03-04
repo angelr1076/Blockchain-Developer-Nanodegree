@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.24;
 
-// Ownable.sol is not for transferring the ownership of an item (coffee) from one address to an other one. 
-// But to transfer the ownership of the contract. In some contracts the owner has some special administrative 
+// Ownable.sol is not for transferring the ownership of an item (coffee) from one address to an other one.
+// But to transfer the ownership of the contract. In some contracts the owner has some special administrative
 // functions that only can be executed by the owner and that is the reason that the modifier onlyOwnerexists.
 // FAQ: https://docs.openzeppelin.org/docs/learn-about-access-control.html
 
@@ -14,7 +14,7 @@ contract Ownable {
     event TransferOwnership(address indexed oldOwner, address indexed newOwner);
 
     /// Assign the contract to an owner
-    constructor () {
+    constructor() {
         origOwner = msg.sender;
         emit TransferOwnership(address(0), origOwner);
     }
