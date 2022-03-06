@@ -111,7 +111,8 @@ See also the list of [contributors](https://github.com/your/project/contributors
 * Truffle
 * IPFS
 
-See README in project3 directory for project's requirements:
+See [README](![Activity Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeActivityDiagram.png)
+) in project3 directory for project's requirements:
 
 * The contract address
 * If libraries were used, include why these libraries were adopted.
