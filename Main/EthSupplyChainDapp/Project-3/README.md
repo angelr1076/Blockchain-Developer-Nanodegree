@@ -11,6 +11,8 @@ Launch Ganache from the terminal within the project-3 folder
 ```ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"```
 Libraries used:
 
+Libraries:
+
 - lite-server: 2.4.0,
 - prettier: ^2.5.1,
 - prettier-plugin-solidity: ^1.0.0-beta.19
