@@ -111,8 +111,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 * Truffle
 * IPFS
 
-See [README](![Activity Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeActivityDiagram.png)
-) in project3 directory for project's requirements:
+See [README](https://github.com/angelr1076/Blockchain-Developer-Nanodegree/tree/main/Main/EthSupplyChainDapp/Project-3) in project3 directory for project's requirements:
 
 * The contract address
 * If libraries were used, include why these libraries were adopted.
