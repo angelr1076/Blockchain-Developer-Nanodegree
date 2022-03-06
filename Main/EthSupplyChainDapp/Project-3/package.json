@@ -1,14 +1,14 @@
 {
-    "name": "supplychain",
+    "name": "BeanFul",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
         "dev": "lite-server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
-    "author": "ar <angelr1076@gmail.com> (https://rinkeby.infura.io/v3/cc16c62e41534b5d8176a73d6f58ff0f)",
+    "author": "ar <angelr1076@gmail.com>",
     "license": "MIT",
     "devDependencies": {
         "lite-server": "2.4.0",
@@ -16,6 +16,8 @@
         "prettier-plugin-solidity": "^1.0.0-beta.19"
     },
     "dependencies": {
-        "@truffle/contract": "^4.4.10"
+        "@truffle/contract": "^4.4.10",
+        "dotenv": "^16.0.0",
+        "truffle-hdwallet-provider": "^1.0.17"
     }
 }

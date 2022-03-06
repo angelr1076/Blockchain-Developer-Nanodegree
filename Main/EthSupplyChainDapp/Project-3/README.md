@@ -2,6 +2,9 @@
 
 [FAQ - Architect a Blockchain Dapp](https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55)
 
+[Contract 0x6DC4E7bb455D317D13bc434fbCfdaD9079D6982f](https://rinkeby.etherscan.io/address/0x6dc4e7bb455d317d13bc434fbcfdad9079d6982f)
+![Deployed](https://res.cloudinary.com/angelrodriguez/image/upload/v1646578126/BlockchainDevNanodegree/Project3/ContractDeployed.png)
+
 ## Project write-up
 
 ### Requirement 1: Project write-up - UML
@@ -65,11 +68,11 @@ This Core Contract must implement:
 - Secondary: Allows contract to be transferred owners.
 
 ### Part 3: Test smart contract code coverage
+
 #### Requirement: Smart contract has associated tests
+
 For this project, as with any project, make sure to test your smart contracts to ensure they are working properly in different situations without any risk.
 
-
-#### Requirement: Smart contract has associated tests
 At minimum, test every function for every function you implemented from your Sequence Diagram. For example, from this Sequence Diagram we would need to test 10 functions:
 
 - harvestItem()
@@ -89,8 +92,10 @@ Launch Ganache from the terminal within the project-3 folder
 
 ```ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"```
 
+Running Infura with MetaMask
+[Running Infura with MetaMask](https://classroom.udacity.com/nanodegrees/nd1309/parts/cd0597/modules/ab64742b-321e-4f6b-8a61-7dc37b7af399/lessons/3c4165b8-9134-45be-adda-0ab85ec17798/concepts/c02edc35-5fba-4aa7-b855-ea078534c95f)
 
-### Project Todos:
+### Project Todos
 
 - Make sure that you added all the roles and implemented the roles that were not complete, based on the code of a role that is implemented in the boilerplate
 - Use the roles in the supplychain contract
