@@ -2,17 +2,38 @@
 
 [FAQ - Architect a Blockchain Dapp](https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55)
 
-[Contract 0x6DC4E7bb455D317D13bc434fbCfdaD9079D6982f](https://rinkeby.etherscan.io/address/0x6dc4e7bb455d317d13bc434fbcfdad9079d6982f)
-![Deployed](https://res.cloudinary.com/angelrodriguez/image/upload/v1646578126/BlockchainDevNanodegree/Project3/ContractDeployed.png)
+[Contract Address: 0x6DC4E7bb455D317D13bc434fbCfdaD9079D6982f](https://rinkeby.etherscan.io/address/0x6dc4e7bb455d317d13bc434fbcfdad9079d6982f)
 
-## Project write-up
+![Deployed on Rinkeby](https://res.cloudinary.com/angelrodriguez/image/upload/v1646578126/BlockchainDevNanodegree/Project3/ContractDeployed.png)
+
+Launch Ganache from the terminal within the project-3 folder
+
+```ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"```
+Libraries used:
+
+- lite-server: 2.4.0,
+- prettier: ^2.5.1,
+- prettier-plugin-solidity: ^1.0.0-beta.19
+- @truffle/contract: ^4.4.10,
+- dotenv: ^16.0.0,
+- truffle-hdwallet-provider: ^1.0.17
+
+Versions:
+
+- Truffle v4.1.14 (core: 4.1.14)
+- Solidity v0.4.24 (solc-js)
+- Node v16.4.2
+
+# Project write-up
+
+## Part 1: Plan the project with write-ups
 
 ### Requirement 1: Project write-up - UML
 
+![Activity Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeActivityDiagram.png)
 ![Flow Sequence Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeFlowSeqDiagram.png)
 ![State Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeBeanStateDiagram.png)
 ![Data Model Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeDataModDiagram.png)
-![Activity Diagram](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646004278/BlockchainDevNanodegree/Project3/CoffeeActivityDiagram.png)
 
 ### Requirement 2: Project write-up - Libraries
 
@@ -21,6 +42,8 @@ If libraries are used in the project, the project write-up indicates which libra
 ### Requirement 3: Project write-up - IPFS
 
 If IPFS is used, the project write-up discusses how IPFS is used in this project.
+
+## Part 2: Write smart contracts
 
 ### Requirement 1: Define and implement required interfaces
 
@@ -67,9 +90,9 @@ This Core Contract must implement:
 - Ownable: Define an owner for all the contracts.
 - Secondary: Allows contract to be transferred owners.
 
-### Part 3: Test smart contract code coverage
+## Part 3: Test smart contract code coverage
 
-#### Requirement: Smart contract has associated tests
+### Requirement: Smart contract has associated tests
 
 For this project, as with any project, make sure to test your smart contracts to ensure they are working properly in different situations without any risk.
 
@@ -88,18 +111,37 @@ At minimum, test every function for every function you implemented from your Seq
 
 ![image](https://user-images.githubusercontent.com/29229469/156370859-a29f3307-3a49-449e-871b-feb0a36f868d.png)
 
-Launch Ganache from the terminal within the project-3 folder
+## Part 4: Deploy smart contracts on public test network
 
-```ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"```
+### Requirement 1: Deploy smart contract on a public test network
 
-Running Infura with MetaMask
-[Running Infura with MetaMask](https://classroom.udacity.com/nanodegrees/nd1309/parts/cd0597/modules/ab64742b-321e-4f6b-8a61-7dc37b7af399/lessons/3c4165b8-9134-45be-adda-0ab85ec17798/concepts/c02edc35-5fba-4aa7-b855-ea078534c95f)
+Using Truffle framework, deploy your smart contract with the Rinkeby test network. Take note of your contract hash and address after successful deployment.
 
-### Project Todos
+Tip: Refer to Infura screencast for assistance on deploying your smart contract with Infura and Truffle.
 
-- Make sure that you added all the roles and implemented the roles that were not complete, based on the code of a role that is implemented in the boilerplate
-- Use the roles in the supplychain contract
-- Complete the functions in the supplychain contract that are not finished
-- Add the functions that are missing according to your UMLs
-- Tests all of the functions in the supplychain contract
-- Make sure that the Dapp works
+### Requirement 2: Submit Contract Address
+
+Provide a document with your project submission that includes the contract address.
+
+Document for your project must be in either ".txt" or ".md" format.
+
+Hint: You can view the Contract address using a blockchain explorer (e.g. Etherscan).
+
+[Example of a random Contract address on the Rinkeby test network](https://rinkeby.etherscan.io/address/0xfb0720c0715e68f80c0c0437c9c491abfed9e7ab#code)
+
+## Part 5: Modify client code to interact with smart contracts
+
+Create the frontend that allows your users to interact with your DApp. This should be a simple and clean frontend that manages product lifecycle as the product navigates down the supply chain.
+
+Using javascript, create a single JS file with all web3 functions that allows your client code to interact with you smart contracts.
+
+The coffee example in the boilerplate provides this code for you.
+
+### Requirement: Configure client code for each actor
+
+Front-end is configured to:
+
+1) Submit a product for shipment (farmer to the distributor, distributor to retailer, etc).
+2) Receive product from shipment.
+3) Validate the authenticity of the product.
+Frontend code can be downloaded and executed from a local environment
