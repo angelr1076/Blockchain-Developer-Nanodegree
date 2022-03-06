@@ -4,7 +4,7 @@
 
 [Contract Address: 0x6DC4E7bb455D317D13bc434fbCfdaD9079D6982f](https://rinkeby.etherscan.io/address/0x6dc4e7bb455d317d13bc434fbcfdad9079d6982f)
 
-![Deployed on Rinkeby](https://res.cloudinary.com/angelrodriguez/image/upload/v1646578126/BlockchainDevNanodegree/Project3/ContractDeployed.png)
+![Deployed on Rinkeby](https://res.cloudinary.com/angelrodriguez/image/upload/v1646586250/BlockchainDevNanodegree/Project3/RinkebyDeploy.png)
 
 Launch Ganache from the terminal within the project-3 folder
 
