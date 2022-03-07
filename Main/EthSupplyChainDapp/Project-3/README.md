@@ -1,5 +1,7 @@
 # Project 3 - BeanFul Coffee Bean Supply Chain
 
+A small portion of the README uses the initially cloned README instructions. 
+
 [FAQ - Architect a Blockchain Dapp](https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55)
 
 # Supply chain & data auditing
@@ -67,10 +69,6 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 Please make sure you've already installed ganache-cli, Truffle and enabled MetaMask extension in your browser.
-
-```
-Give examples (to be clarified)
-```
 
 ### Installing
 
