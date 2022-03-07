@@ -117,7 +117,7 @@ At minimum, test every function for every function you implemented from your Seq
 - fetchItemBufferOne()
 - fetchItemBufferTwo()
 
-![image](https://user-images.githubusercontent.com/29229469/156370859-a29f3307-3a49-449e-871b-feb0a36f868d.png)
+![image](https://res.cloudinary.com/angelrodriguez/image/upload/v1646683786/BlockchainDevNanodegree/Project3/flowsequence.png)
 
 ## Part 4: Deploy smart contracts on public test network
 
