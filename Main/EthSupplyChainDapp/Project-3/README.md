@@ -3,21 +3,27 @@
 [FAQ - Architect a Blockchain Dapp](https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55)
 
 [Contract Address: 0x6DC4E7bb455D317D13bc434fbCfdaD9079D6982f](https://rinkeby.etherscan.io/address/0x6dc4e7bb455d317d13bc434fbcfdad9079d6982f)
+Transaction hash: ```0x6741a56302291aa8bb5976c26cfb31a5c26fd60aee4c829013633626c6029bd6```
 
 ![Deployed on Rinkeby](https://res.cloudinary.com/angelrodriguez/image/upload/v1646586250/BlockchainDevNanodegree/Project3/RinkebyDeploy.png)
 
-Launch Ganache from the terminal within the project-3 folder
-
+Launch Ganache from the terminal within the project-3 folder for testing
 ```ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"```
+
+In a separate terminal window, run truffle in dev mode
+```truffle compile```
+```truffle migrate --reset```
+```truffle test```
+
 Libraries used:
 
 Libraries:
 
 - lite-server: 2.4.0,
-- prettier: ^2.5.1,
-- prettier-plugin-solidity: ^1.0.0-beta.19
+- prettier: ^2.5.1, <!-- Used for formatting solidity code -->
+- prettier-plugin-solidity: ^1.0.0-beta.19 <!-- Used for formatting solidity code -->
 - @truffle/contract: ^4.4.10,
-- dotenv: ^16.0.0,
+- dotenv: ^16.0.0, <!-- Used to hide env variables, namely infuraKey and nmemonic phrase -->
 - truffle-hdwallet-provider: ^1.0.17
 
 Versions:
