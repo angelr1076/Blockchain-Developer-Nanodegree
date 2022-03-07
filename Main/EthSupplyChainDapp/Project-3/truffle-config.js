@@ -24,13 +24,9 @@
 
 require('dotenv').config;
 const HDWalletProvider = require('truffle-hdwallet-provider');
-// const infuraKey = process.env.INFURAKEY;
-const infuraKey =
-  'https://rinkeby.infura.io/v3/cc16c62e41534b5d8176a73d6f58ff0f';
+const infuraKey = process.env.INFURAKEY;
 // const fs = require('fs');
 const mnemonic = process.env.MNEMONIC; // From MetaMask
-const mnemonic =
-  'canyon refuse hover area wreck negative summer effort sea angry vacant brisk'; // From MetaMask
 
 module.exports = {
   /**
@@ -46,7 +42,7 @@ module.exports = {
   networks: {
     development: {
       host: '127.0.0.1', // Localhost (default: none)
-      port: 7545, // Ganache
+      port: 8545, // Ganache
       //   port: 8545, // Standard Ethereum port (default: none)
       network_id: '*', // Any network (default: none)
     },
