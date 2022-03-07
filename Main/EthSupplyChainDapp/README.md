@@ -82,7 +82,7 @@ Clone this repository:
 git clone https://github.com/udacity/nd1309/tree/master/course-5/project-6
 ```
 
-Change directory to ```project-6``` folder and install all requisite npm packages (as listed in ```package.json```):
+Change directory to ```project-3``` folder and install all requisite npm packages (as listed in ```package.json```):
 
 ```
 cd project-6
@@ -90,7 +90,9 @@ npm install
 ```
 
 Testing:
-Launch Ganache from the terminal within the project-3 folder for testing
+
+Launch Ganache from the terminal within the project-3 folder for testing. In the terminal from the project-3 folder, type:
+
 ```ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"```
 
 In a separate terminal window, run truffle in dev mode
@@ -163,7 +165,7 @@ Consumer: accounts[4]  0x6bddf7341d996b8f18e1cc0e65ac62291a52797c
     ✓ Testing smart contract function fetchItemBufferTwo() that allows anyone to fetch item details from blockchain (61ms)
 ```
 
-In a separate terminal window, launch the DApp:
+In a separate terminal window, launch in dev mode to interact with the Dapp locally:
 
 ```
 npm run dev
