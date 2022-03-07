@@ -225,7 +225,7 @@ MacBook-Angel:Project-3 angelrodriguez$ npm run dev
 
 [Contract Address: 0x6DC4E7bb455D317D13bc434fbCfdaD9079D6982f](https://rinkeby.etherscan.io/address/0x6dc4e7bb455d317d13bc434fbcfdad9079d6982f)
 
-- Transaction hash: ```0x6741a56302291aa8bb5976c26cfb31a5c26fd60aee4c829013633626c6029bd6```
+```Transaction hash: 0x6741a56302291aa8bb5976c26cfb31a5c26fd60aee4c829013633626c6029bd6```
 
 ![Deployed on Rinkeby](https://res.cloudinary.com/angelrodriguez/image/upload/v1646586250/BlockchainDevNanodegree/Project3/RinkebyDeploy.png)
 
