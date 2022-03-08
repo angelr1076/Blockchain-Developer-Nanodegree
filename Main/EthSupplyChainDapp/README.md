@@ -11,11 +11,8 @@ This repository containts an Ethereum DApp that demonstrates a Supply Chain flow
 The DApp User Interface when running should look like...
 
 ![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/productoverview.png)
-
 ![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/farmdetails.png)
-
 ![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/productdetails.png)
-
 ![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/transactionhistory.png)
 
 # Project write-up
