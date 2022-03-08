@@ -38,21 +38,21 @@ App = {
         App.retailerID = $('#retailerID').val();
         App.consumerID = $('#consumerID').val();
 
-        console.log(
-            App.sku,
-            App.upc,
-            App.ownerID,
-            App.originFarmerID,
-            App.originFarmName,
-            App.originFarmInformation,
-            App.originFarmLatitude,
-            App.originFarmLongitude,
-            App.productNotes,
-            App.productPrice,
-            App.distributorID,
-            App.retailerID,
-            App.consumerID
-        );
+        // console.log(
+        //     App.sku,
+        //     App.upc,
+        //     App.ownerID,
+        //     App.originFarmerID,
+        //     App.originFarmName,
+        //     App.originFarmInformation,
+        //     App.originFarmLatitude,
+        //     App.originFarmLongitude,
+        //     App.productNotes,
+        //     App.productPrice,
+        //     App.distributorID,
+        //     App.retailerID,
+        //     App.consumerID
+        // );
     },
 
     initWeb3: async function() {
@@ -93,7 +93,7 @@ App = {
                 console.log('Error:', err);
                 return;
             }
-            console.log('getMetaskID:', res);
+            console.log('getMetaMaskID:', res);
             App.metamaskAccountID = res[0];
         });
     },
@@ -108,6 +108,9 @@ App = {
             var SupplyChainArtifact = data;
             App.contracts.SupplyChain = TruffleContract(SupplyChainArtifact);
             App.contracts.SupplyChain.setProvider(App.web3Provider);
+
+            web3.eth.defaultAccount = web3.eth.accounts[0];
+            console.log('Web3 ETH defaultAccount: ', web3.eth.defaultAccount);
 
             App.fetchItemBufferOne();
             App.fetchItemBufferTwo();
@@ -129,7 +132,7 @@ App = {
         App.readForm();
 
         var processId = parseInt($(event.target).data('id'));
-        console.log('processId', processId);
+        // console.log('processId', processId);
 
         switch (processId) {
             case 1:
@@ -163,22 +166,26 @@ App = {
             .then(function(instance) {
                 return instance.harvestItem(
                     App.upc,
-                    $('#originFarmerID').val(),
+                    // $('#originFarmerID').val(),
+                    App.originFarmerID,
                     App.originFarmName,
                     App.originFarmInformation,
                     App.originFarmLatitude,
                     App.originFarmLongitude,
                     App.productNotes, {
                         from: App.metamaskAccountID,
-                        gas: 10000000,
-                        gasPrice: 30000000,
+                        gas: 500000,
                     }
                 );
             })
             .then(function(result) {
                 $('#ftc-item').text(result);
+                // console.log(result);
+                // App.ownerID = App.metamaskAccountID;
+                // $('#ownerID').text(result.receipt.from.toString());
+
                 console.log('harvestItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -196,7 +203,7 @@ App = {
             .then(function(result) {
                 $('#ftc-item').text(result);
                 console.log('processItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -214,7 +221,7 @@ App = {
             .then(function(result) {
                 $('#ftc-item').text(result);
                 console.log('packItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -227,7 +234,7 @@ App = {
 
         App.contracts.SupplyChain.deployed()
             .then(function(instance) {
-                const productPrice = web3.toWei(0.02, 'ether');
+                const productPrice = web3.toWei('0.01', 'ether');
                 console.log('productPrice', productPrice);
                 return instance.sellItem(App.upc, App.productPrice, {
                     from: App.metamaskAccountID,
@@ -236,7 +243,7 @@ App = {
             .then(function(result) {
                 $('#ftc-item').text(result);
                 console.log('sellItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -249,7 +256,7 @@ App = {
 
         App.contracts.SupplyChain.deployed()
             .then(function(instance) {
-                const walletValue = web3.toWei(0.04, 'ether');
+                const walletValue = web3.toWei('0.03', 'ether');
                 return instance.buyItem(App.upc, {
                     from: App.metamaskAccountID,
                     value: walletValue,
@@ -258,7 +265,7 @@ App = {
             .then(function(result) {
                 $('#ftc-item').text(result);
                 console.log('buyItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -276,7 +283,7 @@ App = {
             .then(function(result) {
                 $('#ftc-item').text(result);
                 console.log('shipItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -294,7 +301,7 @@ App = {
             .then(function(result) {
                 $('#ftc-item').text(result);
                 console.log('receiveItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -312,7 +319,7 @@ App = {
             .then(function(result) {
                 $('#ftc-item').text(result);
                 console.log('purchaseItem', result);
-                console.log('processId', processId);
+                // console.log('processId', processId);
             })
             .catch(function(err) {
                 console.log(err.message);
@@ -374,7 +381,9 @@ App = {
                         $('#ftc-events').append(
                             `<li> ${log.event} - ${log.transactionHash} </li>`
                         );
+                    console.log(`<li> ${log.event} - ${log.transactionHash} </li>`);
                 });
+                // return events;
             })
             .catch(function(err) {
                 console.log(err.message);
