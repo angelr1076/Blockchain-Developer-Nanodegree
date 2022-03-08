@@ -237,4 +237,8 @@ Front-end is configured to:
 1) Submit a product for shipment (farmer to the distributor, distributor to retailer, etc).
 2) Receive product from shipment.
 3) Validate the authenticity of the product.
-Frontend code can be downloaded and executed from a local environment
+
+![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/productoverview.png)
+![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/farmdetails.png)
+![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/productdetails.png)
+![truffle test](https://res.cloudinary.com/angelrodriguez/image/upload/c_scale,h_320,w_500/v1646772826/BlockchainDevNanodegree/Project3/transactionhistory.png)
