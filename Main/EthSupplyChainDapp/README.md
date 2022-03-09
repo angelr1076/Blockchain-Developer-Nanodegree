@@ -1,6 +1,6 @@
 # Project 3 - BeanFul Coffee Bean Supply Chain
 
-A small portion of the README uses the initially cloned README instructions.
+A small portion of the README uses the initially cloned README instructions for testing.
 
 [FAQ - Architect a Blockchain Dapp](https://andresaaap.medium.com/architect-a-blockchain-supply-chain-solution-part-b-project-faq-udacity-blockchain-da86496fce55)
 
