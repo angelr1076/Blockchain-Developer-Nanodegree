@@ -15,7 +15,7 @@ Learn the fundamentals of the blockchain platform. Create your own private block
 
 ## Blockchain Architecture
 
-- [ ] Learn blockchain architecture and advanced concepts such as privacy, security and decentralized file management.
+- [x] Learn blockchain architecture and advanced concepts such as privacy, security and decentralized file management.
 
 ## Dapp with autonomous smart contracts and oracles
 
