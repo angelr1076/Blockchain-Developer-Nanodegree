@@ -4,3 +4,17 @@ Oracles
 - Shipping
 - Finance
 
+Types of attacks
+
+- Sybil: one entity that pretends to be many entities 
+- Cartel: a group that colludes to create outcomes that favor them
+- Mirroring: influence many oracles to tip the balance and influence the outcome of things
+- Free loading: steal the output of another output and pretend its their without staking
+- Privacy: takes advantage of confidential data it should not have in order to tip the scales
+
+Preventing these
+
+- Block the means of communication between oracles
+- Block ability to identify oracles 
+- block ability to see answers submitted by other oracles
+
