@@ -1,5 +1,7 @@
 Oracles
 
+Repository: git clone https://github.com/udacity/BCND-C6-Exercises
+
 - Flight insurance
 - Shipping
 - Finance
