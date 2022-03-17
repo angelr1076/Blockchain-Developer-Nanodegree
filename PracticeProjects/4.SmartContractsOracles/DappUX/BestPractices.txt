@@ -1,0 +1,66 @@
+Best Practices
+
+
+Waiting:
+- Progress indicators with APIs for estimates
+- Have code in place to notify when processing is done
+
+
+Impact:
+- Be very clear what will happen when a user takes an action
+
+
+Cost:
+- Be clear about the transaction cost and the blockchain cost
+- If transaction fails, notify them they may be charged a gas fee
+
+
+Events:
+- Ensure you provide events like toasts and popups without annoying the user
+- Try to limit the amount of notifications
+- Every event should have a user priority indicator (priority of event to user)
+
+
+Provenance: The place of origin or earliest known history of something
+- What data is coming from the blockchain and if it is public
+- What data is coming from a database and if the data is potentially private or semi-private
+- What data is coming from a 3rd party oracle that you have no control over
+
+
+Addresses:
+- Do not show the full address in the UI
+- Show the ux and the last few digits of the address
+- Make sure the address is selectable
+
+
+History:
+- Give the user a history of their interactions
+
+
+Context:
+- Use color and clear language to indicate context
+- Clarify the state that the Dapp is in
+
+
+Privacy:
+- Do not directly store private user data in a Smart Contract
+- Encrypt sensitive data
+
+
+Affordance:
+- Don't make the user think (e.g. A mug with a handle - it's so obvious to grab the mug by the handle)
+
+
+Project Starter Code
+Link to the project repository: https://github.com/udacity/FlightSurety
+
+Please install the following versions to work best with project starter codes
+
+Truffle v5 
+Solidity v0.4.24 (solc-js)
+Node v10.7.0
+Web3.js v1.0.0-beta.37
+
+To uninstall and reinstall Truffle 5: https://stackoverflow.com/questions/62047491/cant-uninstall-and-reinstall-truffle
+
+Please review and install the package dependencies and versions from package.json file.
