@@ -23,6 +23,9 @@ To use the dapp:
 `truffle migrate`
 `npm run dapp`
 
+Run Ganache:
+```ganache-cli -m 'candy maple cake sugar pudding cream honey rich smooth crumble sweet treat'```
+
 To view dapp:
 
 `http://localhost:8000`
