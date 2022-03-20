@@ -1,5 +1,7 @@
 # FlightSurety
 
+## Attribution: Cloned from yarode as an updated version of Nik Kalyani's starter code for this project using solc 0.8.0
+
 FlightSurety is a sample application project for Udacity's Blockchain course.
 
 ## Install
@@ -19,12 +21,10 @@ To run truffle tests:
 `truffle test ./test/oracles.js`
 
 To use the dapp:
-
-`truffle migrate`
-`npm run dapp`
-
 Run Ganache:
 ```ganache-cli -m 'candy maple cake sugar pudding cream honey rich smooth crumble sweet treat'```
+`truffle migrate --reset`
+`npm run dapp`
 
 To view dapp:
 
@@ -41,7 +41,6 @@ To build dapp for prod:
 `npm run dapp:prod`
 
 Deploy the contents of the ./dapp folder
-
 
 ## Resources
 
