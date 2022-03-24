@@ -64,3 +64,7 @@ typings/
 .env
 
 ~$*.pptx
+
+# Config files - Project is being worked on with Windows and MacOS
+truffle.js
+truffle-config.js
