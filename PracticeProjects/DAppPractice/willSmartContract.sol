@@ -40,14 +40,15 @@ contract Will {
 
   // Pay each family member based on their wallet address
   function payout() private mustBeDeceased {
+    deceased = true;
     for(uint i = 0; i < familyWallets.length; i++) {
       familyWallets[i].transfer(inheritance[familyWallets[i]]);
     }
   }
 
   // Oracle switch simulation
-  function hasDeceased() public onlyOwner {
-    deceased = true;
-    payout();
-  }
+  // function hasDeceased() public onlyOwner {
+  //   deceased = true;
+  //   payout();
+  // }
 }
