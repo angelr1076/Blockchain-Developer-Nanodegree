@@ -7,7 +7,9 @@ contract AddressWallets {
     
     mapping(address => uint) investors;
     
-    
+    constructor() payable public {
+        fortune= msg.value;
+    }
     
     function payInvestors(address payable wallet, uint amount) public {
         investorWallets.push(wallet);
@@ -21,16 +23,12 @@ contract AddressWallets {
         }
     } 
     
-        constructor() payable public {
-            fortune= msg.value;
-    }
-    
     function makePayment() public {
-                        payout();
+        payout();
     }
 
 
-function checkInvestors() public view returns (uint) {
-    return investorWallets.length;
-}    
+  function checkInvestors() public view returns (uint) {
+      return investorWallets.length;
+  }    
 }
