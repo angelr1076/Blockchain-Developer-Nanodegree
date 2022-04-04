@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.5.7;
+pragma solidity ^0.8.7;
 
 contract Will {
 	address owner;
 	uint fortune;
 	bool deceased;
 
-	constructor() payable public {
+	constructor() payable {
 		owner = msg.sender; 
 		fortune = msg.value;
 		deceased = false;
@@ -40,15 +40,14 @@ contract Will {
 
   // Pay each family member based on their wallet address
   function payout() private mustBeDeceased {
-    deceased = true;
     for(uint i = 0; i < familyWallets.length; i++) {
       familyWallets[i].transfer(inheritance[familyWallets[i]]);
     }
   }
 
   // Oracle switch simulation
-  // function hasDeceased() public onlyOwner {
-  //   deceased = true;
-  //   payout();
-  // }
+  function hasDeceased() public payable onlyOwner {
+    deceased = true;
+    payout();
+  }
 }
