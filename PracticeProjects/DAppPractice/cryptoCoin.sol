@@ -1,6 +1,6 @@
 pragma solidity ^0.8.4;
 
-contract Coin {
+contract CoinBase {
     // The keyword "public" makes variables
     // accessible from other contracts
     address public minter;
