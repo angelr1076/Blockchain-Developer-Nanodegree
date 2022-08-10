@@ -17,10 +17,3 @@ Learn the fundamentals of the blockchain platform. Create your own private block
 
 - [x] Learn blockchain architecture and advanced concepts such as privacy, security and decentralized file management.
 
-## Dapp with autonomous smart contracts and oracles
-
-- [ ] Advance your blockchain skill set by developing a decentralized application (Dapp) that will perform actions based on external triggers, and handle payments.
-
-## Capstone
-
-- [ ] For your capstone project, you’ll use all the new skills you’ve acquired to build decentralized property listing application.
